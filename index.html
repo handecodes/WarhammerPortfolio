@@ -12,16 +12,15 @@
 
 <div class="grimoire-wrap">
 
-  <!-- ═══ IMPERIAL HEADER ═══ -->
-  <!-- Disposal Unit (Imperium Mix) - Jesper Kyd / Darktide OST
-       Hidden YouTube player - no download needed -->
+  
+  
   <div id="ytPlayer" style="position:fixed;bottom:-9999px;left:-9999px;width:1px;height:1px;pointer-events:none;"></div>
 
   <header class="imperial-header">
-    <!-- Music toggle - top right -->
+    
     <button class="music-btn" id="musicBtn" aria-label="Play background hymn" title="Toggle battle hymn">
       <span class="music-icon music-icon-play">
-        <!-- Musical note SVG -->
+        
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/>
@@ -29,7 +28,7 @@
         </svg>
       </span>
       <span class="music-icon music-icon-stop" style="display:none">
-        <!-- Stop icon -->
+        
         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <rect x="6" y="6" width="12" height="12" rx="1"/>
         </svg>
@@ -45,7 +44,7 @@
     <div class="imperial-sub">Sister Dialogus · Fullstack .NET · Anno M41.MMXXVI · Stockholm Hive</div>
   </header>
 
-  <!-- ═══ CHAPTER TABS ═══ -->
+  
   <div class="chapter-tabs" id="chapterTabs">
     <button class="ctab active" data-chapter="0">
       <span class="ctab-numeral">I</span>
@@ -65,11 +64,11 @@
     </button>
   </div>
 
-  <!-- ═══ BOOK ═══ -->
+  
   <div class="book-container" id="bookContainer">
     <div id="book">
 
-      <!-- ══ PAGE 0 left: About ══ -->
+      
       <div class="page page-left">
         <div class="page-border"></div>
         <div class="rv tl"></div><div class="rv bl"></div>
@@ -77,7 +76,7 @@
           <div class="chap-label">Liber I · Epistola Personalis</div>
           <div class="stamp">Ministorum · Sanctioned</div>
 
-          <!-- Two-column grid: text left, portrait right, seals span full width below -->
+          
           <div class="page0-grid">
 
             <div class="page0-text">
@@ -116,27 +115,19 @@
               <p class="portrait-caption">Sister Hande Bengü<br>Dialogus · Order of the Quill</p>
             </div>
 
-          </div><!-- end page0-grid -->
+          </div>
 
           <div class="seals">
-            <a class="seal seal-gh" href="https://github.com/handechasacademy" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 496 512"><path d="M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>
-            </a>
-            <a class="seal seal-li" href="https://www.linkedin.com/in/handebengu" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-            </a>
-            <a class="seal seal-em" href="mailto:handebengu@gmail.com" aria-label="Vox Transmit">
-              <svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-6.588 3.953a.5.5 0 0 1-.424 0L1 5.383V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5.383z"/></svg>
-            </a>
-            <a class="seal seal-cv" href="assets/HandeBenguCV.pdf" download aria-label="Retrieve Scroll of Deeds">
-              <svg viewBox="0 0 16 16"><path d="M.5 9.9v5.6c0 .28.22.5.5.5h14c.28 0 .5-.22.5-.5V9.9H14v5H2v-5H.5z"/><path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 1 0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1 0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-            </a>
+            <a class="seal seal-gh" href="https://github.com/handechasacademy" target="_blank" rel="noopener" aria-label="GitHub"></a>
+            <a class="seal seal-li" href="https://www.linkedin.com/in/handebengu" target="_blank" rel="noopener" aria-label="LinkedIn"></a>
+            <a class="seal seal-em" href="mailto:handebengu@gmail.com" aria-label="Vox Transmit"></a>
+            <a class="seal seal-cv" href="assets/HandeBenguCV.pdf" download aria-label="Retrieve Scroll of Deeds"></a>
           </div>
         </div>
         <div class="page-num">i</div>
       </div>
 
-      <!-- ══ PAGE 1 right: Skills overview ══ -->
+      
       <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
@@ -159,7 +150,7 @@
         <div class="page-num right-num">ii</div>
       </div>
 
-      <!-- ══ PAGE 2 left: Full skills ══ -->
+      
       <div class="page page-bigger page-left">
         <div class="page-border"></div>
         <div class="rv tl"></div><div class="rv bl"></div>
@@ -183,7 +174,7 @@
         <div class="page-num">iii</div>
       </div>
 
-      <!-- ══ PAGE 3 right: Tools ══ -->
+      
       <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
@@ -207,7 +198,7 @@
         <div class="page-num right-num">iv</div>
       </div>
 
-      <!-- ══ PAGE 4 left: Experience ══ -->
+      
       <div class="page page-bigger page-left">
         <div class="page-border"></div>
         <div class="rv tl"></div><div class="rv bl"></div>
@@ -241,7 +232,7 @@
         <div class="page-num">v</div>
       </div>
 
-      <!-- ══ PAGE 5 right: Confessor's notes ══ -->
+      
       <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
@@ -259,7 +250,7 @@
         <div class="page-num right-num">vi</div>
       </div>
 
-      <!-- ══ PAGE 6 left: GitHub + repos ══ -->
+      
       <div class="page page-bigger page-left">
         <div class="page-border"></div>
         <div class="rv tl"></div><div class="rv bl"></div>
@@ -280,7 +271,7 @@
         <div class="page-num">vii</div>
       </div>
 
-      <!-- ══ PAGE 7 right: More repos ══ -->
+      
       <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
@@ -296,10 +287,10 @@
         <div class="page-num right-num">viii</div>
       </div>
 
-    </div><!-- #book -->
-  </div><!-- .book-container -->
+    </div>
+  </div>
 
-  <!-- ═══ CONTROLS ═══ -->
+  
   <div class="book-controls">
     <button class="ctrl-btn" id="prevBtn" aria-label="Previous page">
       <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -314,7 +305,7 @@
 
   <p class="colophon">Stockholm Hive · M41.MMXXVI · Sister Hande Bengü · The Emperor Protects</p>
 
-</div><!-- .grimoire-wrap -->
+</div>
 
 <script src="https://unpkg.com/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 <script src="script.js"></script>
