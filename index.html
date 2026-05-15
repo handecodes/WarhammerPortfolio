@@ -38,9 +38,9 @@
     </button>
     <div class="imperial-sub">Adeptus Ministorum · Codex Personalis</div>
     <div class="name-row">
-⚜️
+<img class="aquila-icon" src="images/fdlseal.png" alt="fleur-de-lis seal">
       <h1 class="imperial-name">Hande Bengü</h1>
-⚜️
+<img class="aquila-icon" src="images/fdlseal.png" alt="fleur-de-lis seal">
     </div>
     <div class="imperial-sub">Sister Dialogus · Fullstack .NET · Anno M41.MMXXVI · Stockholm Hive</div>
   </header>
@@ -77,98 +77,46 @@
           <div class="chap-label">Liber I · Epistola Personalis</div>
           <div class="stamp">Ministorum · Sanctioned</div>
 
-          <div class="portrait-wrap">
-            <div class="portrait-arch-wrap">
-              <!--
-                Gothic pointed arch: two circular arcs meeting at a sharp peak.
-                Left arc: starts bottom-left, curves up to the sharp point at top-centre.
-                Right arc: starts at point, curves down to bottom-right.
-                A = arc(rx ry x-rotation large-arc-flag sweep-flag x y)
-                rx=ry=110 so both arcs are circles of radius 110.
-              -->
-              <svg class="portrait-arch-svg" viewBox="0 0 220 310" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <!-- Pointed arch clip — two arcs meeting sharply at top -->
-                  <clipPath id="gothic-clip">
-                    <path d="
-                      M 20 305
-                      L 20 160
-                      A 110 130 0 0 1 110 8
-                      A 110 130 0 0 1 200 160
-                      L 200 305
-                      Z
-                    "/>
-                  </clipPath>
-                  <radialGradient id="brass-rivet" cx="35%" cy="35%">
-                    <stop offset="0%" stop-color="#d4a010"/>
-                    <stop offset="100%" stop-color="#7a5000"/>
-                  </radialGradient>
-                </defs>
+          <!-- Two-column grid: text left, portrait right, seals span full width below -->
+          <div class="page0-grid">
 
-                <!-- Photo clipped to pointed arch -->
-                <image href="images/profilepicture.png"
-                  x="0" y="0" width="220" height="310"
-                  preserveAspectRatio="xMidYMin slice"
-                  clip-path="url(#gothic-clip)"/>
-
-                <!-- Stone frame outer edge (thick, dark) -->
-                <path d="
-                  M 4 310 L 4 162
-                  A 118 138 0 0 1 110 4
-                  A 118 138 0 0 1 216 162
-                  L 216 310
-                  L 200 310 L 200 160
-                  A 110 130 0 0 0 110 10
-                  A 110 130 0 0 0 20 160
-                  L 20 310 Z
-                " fill="#16100a"/>
-
-                <!-- Outer brass trim line -->
-                <path d="
-                  M 4 310 L 4 162
-                  A 118 138 0 0 1 110 4
-                  A 118 138 0 0 1 216 162
-                  L 216 310
-                " fill="none" stroke="#b8840a" stroke-width="1.5"/>
-
-                <!-- Inner brass trim line -->
-                <path d="
-                  M 20 310 L 20 160
-                  A 110 130 0 0 1 110 10
-                  A 110 130 0 0 1 200 160
-                  L 200 310
-                " fill="none" stroke="#b8840a" stroke-width="2"/>
-
-                <!-- Gold peak ornament at the sharp point -->
-                <polygon points="105,4 110,0 115,4 111,13 110,11 109,13" fill="#c9a96e"/>
-                <circle cx="110" cy="10" r="3" fill="#d4a820" opacity="0.8"/>
-
-
-
-                <!-- Brass rivets at four corners of frame -->
-                <circle cx="12"  cy="24"  r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
-                <circle cx="208" cy="24"  r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
-                <circle cx="12"  cy="296" r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
-                <circle cx="208" cy="296" r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
-
-                <!-- Violet glow on inner arch edge -->
-                <path d="
-                  M 20 310 L 20 160
-                  A 110 130 0 0 1 110 10
-                  A 110 130 0 0 1 200 160
-                  L 200 310
-                " fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.4"/>
-              </svg>
+            <div class="page0-text">
+              <h2 class="page-title">Blessed be the Seeker.</h2>
+              <p class="page-subtitle">Fullstack .NET Developer Student · Adept of the Machine</p>
+              <div class="orn"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line"></div></div>
+              <p class="body-text dropcap">Seek you a Sister of the Quill? A practitioner of the sacred arts of .NET and SQL - formerly a chirurgeon of teeth, now a weaver of machine-code and seeker of elegant absolution through software.</p>
+              <p class="body-text small italic">Retrieve my Scroll of Deeds below, or commune through the sanctioned channels.</p>
             </div>
-            <p class="portrait-caption">Sister Hande Bengü<br>Dialogus · Order of the Quill</p>
-          </div>
 
-          <h2 class="page-title">Blessed be the Seeker.</h2>
-          <p class="page-subtitle">Fullstack .NET Developer Student · Adept of the Machine</p>
-          <div class="orn"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line"></div></div>
+            <div class="page0-portrait">
+              <div class="portrait-arch-wrap">
+                <svg class="portrait-arch-svg" viewBox="0 0 220 310" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <clipPath id="gothic-clip">
+                      <path d="M 20 305 L 20 160 A 110 130 0 0 1 110 8 A 110 130 0 0 1 200 160 L 200 305 Z"/>
+                    </clipPath>
+                    <radialGradient id="brass-rivet" cx="35%" cy="35%">
+                      <stop offset="0%" stop-color="#d4a010"/>
+                      <stop offset="100%" stop-color="#7a5000"/>
+                    </radialGradient>
+                  </defs>
+                  <image href="images/profilepicture.png" x="0" y="0" width="220" height="310" preserveAspectRatio="xMidYMin slice" clip-path="url(#gothic-clip)"/>
+                  <path d="M 4 310 L 4 162 A 118 138 0 0 1 110 4 A 118 138 0 0 1 216 162 L 216 310 L 200 310 L 200 160 A 110 130 0 0 0 110 10 A 110 130 0 0 0 20 160 L 20 310 Z" fill="#16100a"/>
+                  <path d="M 4 310 L 4 162 A 118 138 0 0 1 110 4 A 118 138 0 0 1 216 162 L 216 310" fill="none" stroke="#b8840a" stroke-width="1.5"/>
+                  <path d="M 20 310 L 20 160 A 110 130 0 0 1 110 10 A 110 130 0 0 1 200 160 L 200 310" fill="none" stroke="#b8840a" stroke-width="2"/>
+                  <polygon points="105,4 110,0 115,4 111,13 110,11 109,13" fill="#c9a96e"/>
+                  <circle cx="110" cy="10" r="3" fill="#d4a820" opacity="0.8"/>
+                  <circle cx="12"  cy="24"  r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
+                  <circle cx="208" cy="24"  r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
+                  <circle cx="12"  cy="296" r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
+                  <circle cx="208" cy="296" r="5.5" fill="url(#brass-rivet)" stroke="#0d0800" stroke-width="1.5"/>
+                  <path d="M 20 310 L 20 160 A 110 130 0 0 1 110 10 A 110 130 0 0 1 200 160 L 200 310" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.4"/>
+                </svg>
+              </div>
+              <p class="portrait-caption">Sister Hande Bengü<br>Dialogus · Order of the Quill</p>
+            </div>
 
-          <p class="body-text dropcap">Seek you a Sister of the Quill? A practitioner of the sacred arts of .NET and SQL - formerly a chirurgeon of teeth, now a weaver of machine-code and seeker of elegant absolution through software.</p>
-          <p class="body-text small italic">Retrieve my Scroll of Deeds below, or commune through the sanctioned channels.</p>
+          </div><!-- end page0-grid -->
 
           <div class="seals">
             <a class="seal seal-gh" href="https://github.com/handechasacademy" target="_blank" rel="noopener" aria-label="GitHub">
@@ -189,7 +137,7 @@
       </div>
 
       <!-- ══ PAGE 1 right: Skills overview ══ -->
-      <div class="page page-right">
+      <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
         <div class="marginalia">Rosarius<br>verified<br>M41.2026</div>
@@ -212,7 +160,7 @@
       </div>
 
       <!-- ══ PAGE 2 left: Full skills ══ -->
-      <div class="page page-left">
+      <div class="page page-bigger page-left">
         <div class="page-border"></div>
         <div class="rv tl"></div><div class="rv bl"></div>
         <div class="page-content">
@@ -236,7 +184,7 @@
       </div>
 
       <!-- ══ PAGE 3 right: Tools ══ -->
-      <div class="page page-right">
+      <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
         <div class="page-content">
@@ -260,7 +208,7 @@
       </div>
 
       <!-- ══ PAGE 4 left: Experience ══ -->
-      <div class="page page-left">
+      <div class="page page-bigger page-left">
         <div class="page-border"></div>
         <div class="rv tl"></div><div class="rv bl"></div>
         <div class="page-content">
@@ -294,7 +242,7 @@
       </div>
 
       <!-- ══ PAGE 5 right: Confessor's notes ══ -->
-      <div class="page page-right">
+      <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
         <div class="page-content">
@@ -312,7 +260,7 @@
       </div>
 
       <!-- ══ PAGE 6 left: GitHub + repos ══ -->
-      <div class="page page-left">
+      <div class="page page-bigger page-left">
         <div class="page-border"></div>
         <div class="rv tl"></div><div class="rv bl"></div>
         <div class="page-content">
@@ -333,7 +281,7 @@
       </div>
 
       <!-- ══ PAGE 7 right: More repos ══ -->
-      <div class="page page-right">
+      <div class="page page-bigger page-right">
         <div class="page-border"></div>
         <div class="rv tr"></div><div class="rv br"></div>
         <div class="page-content">

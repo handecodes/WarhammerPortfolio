@@ -93,9 +93,12 @@ body {
 }
 
 .aquila-icon {
-  font-size: 22px;
+  width: 54px;
+  height: 54px;
   flex-shrink: 0;
-  filter: brightness(0) saturate(100%) invert(68%) sepia(46%) saturate(600%) hue-rotate(5deg) brightness(95%);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
 }
 
 /* ── CHAPTER TABS ── */
@@ -120,7 +123,6 @@ body {
   cursor: pointer;
   transition: all 0.2s;
   background: linear-gradient(180deg, var(--paper3), var(--paper2));
-  /* Dark ink on golden parchment - high contrast */
   color: #1a0800;
   display: flex;
   flex-direction: column;
@@ -180,9 +182,7 @@ body {
     0 24px 80px rgba(0,0,0,0.9);
 }
 
-/* ── SPINE / CREASE OVERLAY ──
-   Dark gradient valley at the exact centre, like a real bound book.
-   Sits above everything, pointer-events off so it doesn't block clicks. */
+/* ── SPINE / CREASE OVERLAY ── */
 .book-container::after {
   content: '';
   position: absolute;
@@ -214,7 +214,6 @@ body {
   position: relative;
 }
 
-/* Ruled lines - removed for hand-inked parchment feel */
 .page::before {
   content: '';
   position: absolute;
@@ -224,7 +223,6 @@ body {
   z-index: 0;
 }
 
-/* Age stains + inner gutter shadow */
 .page-left::after {
   content: '';
   position: absolute;
@@ -247,7 +245,7 @@ body {
   z-index: 0;
 }
 
-/* ── PAGE BORDER (imperial frame) ── */
+/* ── PAGE BORDER ── */
 .page-border {
   position: absolute;
   inset: 10px;
@@ -267,8 +265,8 @@ body {
   z-index: 3;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 1px 3px rgba(0,0,0,0.6);
 }
-.rv.tl { top: 10px;   left: 10px; }
-.rv.tr { top: 10px;   right: 10px; }
+.rv.tl { top: 10px;    left: 10px; }
+.rv.tr { top: 10px;    right: 10px; }
 .rv.bl { bottom: 10px; left: 10px; }
 .rv.br { bottom: 10px; right: 10px; }
 
@@ -276,7 +274,7 @@ body {
 .page-content {
   position: relative;
   z-index: 2;
-  padding: 42px 36px;
+  padding: 48px 40px;
   height: 100%;
 }
 
@@ -286,7 +284,7 @@ body {
   bottom: 14px;
   left: 22px;
   font-family: var(--fc);
-  font-size: 9px;
+  font-size: 12px;
   color: var(--brass);
   letter-spacing: 0.1em;
   z-index: 3;
@@ -312,7 +310,7 @@ body {
 /* ── TYPOGRAPHY ── */
 .chap-label {
   font-family: var(--fc);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.28em;
   color: var(--brass2);
   text-transform: uppercase;
@@ -329,11 +327,10 @@ body {
   opacity: 0.22;
 }
 
-/* WH40K classification stamp */
 .stamp {
   display: inline-block;
   font-family: var(--fc);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   color: var(--blood);
   border: 2px solid var(--blood);
@@ -345,16 +342,17 @@ body {
 
 .page-title {
   font-family: var(--fd);
-  font-size: clamp(18px, 2.6vw, 26px);
+  font-size: clamp(24px, 3.2vw, 34px);
   color: var(--ink);
   line-height: 1.2;
   margin-bottom: 4px;
   text-shadow: 1px 1px 0 rgba(139,100,20,0.1);
+  letter-spacing: 0.04em;
 }
 
 .page-subtitle {
   font-family: var(--fb);
-  font-size: 13px;
+  font-size: 16px;
   font-style: italic;
   color: var(--ink3);
   margin-bottom: 12px;
@@ -362,10 +360,11 @@ body {
 
 .sec-head {
   font-family: var(--fd);
-  font-size: 21px;
+  font-size: 28px;
   color: var(--blood);
   margin: 8px 0 10px;
   line-height: 1.2;
+  text-shadow: 0.5px 0.5px 0 rgba(90,0,0,0.3), 1px 1px 1px rgba(90,0,0,0.08);
 }
 
 /* Ornamental divider */
@@ -381,23 +380,26 @@ body {
 /* Body text */
 .body-text {
   font-family: var(--fb);
-  font-size: 17px;
+  font-size: 21px;
   line-height: 1.8;
   color: var(--ink2);
   margin-bottom: 10px;
+  text-shadow: 0.4px 0.4px 0 rgba(10,5,0,0.25);
+  letter-spacing: 0.01em;
 }
-.body-text.small  { font-size: 15px; }
+.body-text.small  { font-size: 21px; text-shadow: 0.3px 0.3px 0 rgba(10,5,0,0.2); }
 .body-text.italic { font-style: italic; }
-.inquisitor-note  { color: var(--blood); font-size: 12px !important; }
+.inquisitor-note  { color: var(--blood); font-size: 15px !important; }
 
 /* Drop cap */
 .dropcap::first-letter {
   font-family: var(--fd);
-  font-size: 52px;
+  font-size: 64px;
   float: left;
   line-height: 0.82;
   margin: 6px 8px 0 0;
   color: var(--blood);
+  text-shadow: 1px 1px 0 rgba(80,0,0,0.35), 2px 2px 2px rgba(80,0,0,0.1);
 }
 
 /* ── PORTRAIT GOTHIC ARCH ── */
@@ -408,7 +410,6 @@ body {
   text-align: center;
 }
 
-/* Wrapper holds both the photo div and SVG overlay stacked */
 .portrait-arch-wrap {
   position: relative;
   width: 220px;
@@ -419,7 +420,6 @@ body {
     drop-shadow(0 0 16px rgba(124,58,237,0.3));
 }
 
-/* SVG frame overlay — absolutely positioned on top of photo */
 .portrait-arch-svg {
   position: absolute;
   inset: 0;
@@ -429,13 +429,14 @@ body {
 
 .portrait-caption {
   font-family: var(--fc);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   color: var(--brass);
   line-height: 1.6;
+  text-shadow: 0.3px 0.3px 0 rgba(100,65,0,0.3);
 }
 
-/* ── SEALS (social buttons) ── */
+/* ── SEALS ── */
 .seals {
   display: flex;
   gap: 10px;
@@ -470,25 +471,27 @@ body {
 
 /* ── DATA-SLATE SKILL BARS ── */
 .data-slate {
-  background: rgba(10,8,4,0.05);
-  border: 1px solid rgba(139,100,20,0.18);
+  background: rgba(30,10,0,0.07);
+  border: 1px solid rgba(100,65,10,0.22);
   border-left: 3px solid var(--brass);
-  padding: 6px 10px;
-  margin-bottom: 5px;
+  padding: 7px 12px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 .ds-name {
   font-family: var(--fd);
-  font-size: 11px;
+  font-size: 14px;
   color: var(--ink);
-  min-width: 92px;
+  min-width: 110px;
   flex-shrink: 0;
+  text-shadow: 0.4px 0.4px 0 rgba(10,5,0,0.25);
+  letter-spacing: 0.02em;
 }
 .ds-bar-wrap {
   flex: 1;
-  height: 4px;
+  height: 6px;
   background: rgba(139,100,20,0.15);
 }
 .ds-bar {
@@ -497,56 +500,61 @@ body {
 }
 .ds-note {
   font-family: var(--fb);
-  font-size: 11px;
+  font-size: 14px;
   font-style: italic;
   color: var(--ink3);
-  min-width: 90px;
+  min-width: 100px;
   text-align: right;
   flex-shrink: 0;
+  text-shadow: 0.3px 0.3px 0 rgba(10,5,0,0.18);
 }
 
 /* ── EXPERIENCE ENTRIES ── */
 .entry {
-  margin-bottom: 16px;
-  padding-left: 12px;
+  margin-bottom: 18px;
+  padding-left: 14px;
   border-left: 2px solid var(--brass2);
 }
 .entry-date {
   font-family: var(--fc);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.14em;
   color: var(--brass2);
   margin-bottom: 3px;
   display: block;
+  text-shadow: 0.3px 0.3px 0 rgba(100,65,0,0.3);
 }
 .entry-role {
   font-family: var(--fd);
-  font-size: 16px;
+  font-size: 20px;
   color: var(--blood);
   margin-bottom: 2px;
   line-height: 1.3;
+  text-shadow: 0.4px 0.4px 0 rgba(80,0,0,0.28), 0.8px 0.8px 1px rgba(80,0,0,0.08);
 }
 .entry-place {
-  font-size: 13px;
+  font-size: 16px;
   font-style: italic;
   color: var(--ink3);
+  text-shadow: 0.3px 0.3px 0 rgba(10,5,0,0.18);
 }
 
 /* ── GITHUB CHART ── */
 .gh-chart-wrap {
-  background: rgba(10,8,4,0.05);
-  border: 1px solid rgba(139,100,20,0.18);
+  background: rgba(30,10,0,0.07);
+  border: 1px solid rgba(100,65,10,0.22);
   padding: 10px;
   margin-bottom: 14px;
   text-align: center;
 }
 .gh-chart-label {
   font-family: var(--fc);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.18em;
   color: var(--brass);
   margin-bottom: 6px;
   text-transform: uppercase;
+  text-shadow: 0.3px 0.3px 0 rgba(100,65,0,0.3);
 }
 .gh-chart-img {
   width: 100%;
@@ -562,7 +570,7 @@ body {
 .repo-entry {
   margin-bottom: 13px;
   padding-bottom: 11px;
-  border-bottom: 1px solid rgba(139,100,20,0.12);
+  border-bottom: 1px solid rgba(100,65,10,0.15);
 }
 .repo-entry:last-child { border-bottom: none; margin-bottom: 0; }
 
@@ -575,30 +583,33 @@ body {
 }
 .repo-name {
   font-family: var(--fd);
-  font-size: 16px;
+  font-size: 20px;
   color: var(--blood);
   text-decoration: none;
   transition: color 0.2s;
   line-height: 1.3;
+  text-shadow: 0.4px 0.4px 0 rgba(80,0,0,0.28), 0.8px 0.8px 1px rgba(80,0,0,0.08);
 }
 .repo-name:hover { color: var(--blood2); }
 
 .repo-lang {
   font-family: var(--fc);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   color: var(--brass);
   border: 1px solid rgba(139,100,20,0.4);
   padding: 1px 6px;
   white-space: nowrap;
   flex-shrink: 0;
+  text-shadow: 0.3px 0.3px 0 rgba(100,65,0,0.3);
 }
 .repo-desc {
-  font-size: 12px;
+  font-size: 15px;
   font-style: italic;
   color: var(--ink3);
   line-height: 1.5;
   margin-bottom: 4px;
+  text-shadow: 0.3px 0.3px 0 rgba(10,5,0,0.18);
 }
 .repo-meta {
   display: flex;
@@ -606,7 +617,7 @@ body {
 }
 .repo-stat {
   font-family: var(--fc);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   color: rgba(139,100,20,0.45);
 }
@@ -638,8 +649,8 @@ body {
   align-items: center;
   gap: 6px;
 }
-.ctrl-btn svg     { width: 14px; height: 14px; }
-.ctrl-btn:hover   { background: rgba(139,100,20,0.1); border-color: var(--brass2); color: var(--brass3); }
+.ctrl-btn svg      { width: 14px; height: 14px; }
+.ctrl-btn:hover    { background: rgba(139,100,20,0.1); border-color: var(--brass2); color: var(--brass3); }
 .ctrl-btn:disabled { opacity: 0.25; cursor: not-allowed; }
 
 .ctrl-hint {
@@ -661,68 +672,47 @@ body {
 }
 
 /* ── RESPONSIVE ── */
-
-/* Tablet - still two pages but tighter */
 @media (max-width: 900px) {
-  .grimoire-wrap   { padding: 18px 10px 28px; }
-  .imperial-name   { font-size: clamp(20px, 5vw, 36px); }
-  .ctab            { min-width: 72px; padding: 9px 10px 13px; }
-  .ds-note         { display: none; }
+  .grimoire-wrap { padding: 18px 10px 28px; }
+  .imperial-name { font-size: clamp(20px, 5vw, 36px); }
+  .ctab          { min-width: 72px; padding: 9px 10px 13px; }
+  .ds-note       { display: none; }
 }
 
-/* Mobile - single page portrait mode */
 @media (max-width: 700px) {
-  .grimoire-wrap   { padding: 12px 6px 20px; }
-
-  /* Hide spine crease - only one page visible */
+  .grimoire-wrap { padding: 12px 6px 20px; }
   .book-container::after { display: none; }
+  .chapter-tabs  { gap: 3px; }
+  .ctab          { min-width: 56px; padding: 8px 8px 12px; }
+  .ctab-label    { display: none; }
+  .ctab-numeral  { font-size: 16px; }
+  .imperial-name { font-size: 22px; }
+  .aquila-icon   { font-size: 22px; }
 
-  /* Tabs */
-  .chapter-tabs    { gap: 3px; }
-  .ctab            { min-width: 56px; padding: 8px 8px 12px; }
-  .ctab-label      { display: none; }
-  .ctab-numeral    { font-size: 16px; }
-
-  /* Header */
-  .imperial-name   { font-size: 22px; }
-  .aquila          { width: 24px; }
-
-  /* ── MOBILE PAGE SCALING ──
-     PageFlip renders pages at a fixed pixel height.
-     We scale the page-content DOWN to fit inside it,
-     so all text and elements are visible without scrolling.
-     The origin is top-left so content anchors to the top of the page. */
   .page-content {
     padding: 20px 18px;
     transform-origin: top left;
-    /* Scale is set dynamically by JS, but this is the CSS fallback */
     transform: scale(0.72);
-    width: calc(100% / 0.72);  /* counteract width shrink from scale */
+    width: calc(100% / 0.72);
   }
 
-  /* Portrait arch on mobile */
   .portrait-wrap      { float: none; width: 160px; margin: 0 auto 12px; }
   .portrait-arch-wrap { width: 160px; height: 218px; }
 
-  /* Data slate note hidden - not enough room even scaled */
-  .ds-note         { display: none; }
-
-  /* Controls */
-  .ctrl-hint       { display: none; }
-  .book-controls   { padding: 10px 12px; }
-  .ctrl-btn        { padding: 8px 14px; font-size: 10px; }
-
-  .colophon        { font-size: 8px; letter-spacing: 0.14em; }
+  .ds-note     { display: none; }
+  .ctrl-hint   { display: none; }
+  .book-controls { padding: 10px 12px; }
+  .ctrl-btn    { padding: 8px 14px; font-size: 10px; }
+  .colophon    { font-size: 8px; letter-spacing: 0.14em; }
 }
 
-/* Very small phones - scale down a touch more */
 @media (max-width: 420px) {
   .page-content {
     transform: scale(0.62);
     width: calc(100% / 0.62);
   }
-  .ctab            { min-width: 46px; padding: 7px 6px 10px; }
-  .ctab-numeral    { font-size: 13px; }
+  .ctab         { min-width: 46px; padding: 7px 6px 10px; }
+  .ctab-numeral { font-size: 13px; }
 }
 
 @media (max-width: 360px) {
@@ -734,22 +724,21 @@ body {
 
 /* ══════════════════════════════════════════════════════
    PARCHMENT AGING OVERRIDES
-   Deeper yellowed paper, heavier staining, rougher edges
    ══════════════════════════════════════════════════════ */
 
-/* Much more yellowed, worn paper colours */
 :root {
   --paper:  #d4b87a;
   --paper2: #c4a860;
   --paper3: #b89848;
+  --ink:    #0a0500;
+  --ink2:   #150a00;
+  --ink3:   #2e1800;
 }
 
-/* Richer, darker body background to make the book pop */
 body {
   background: radial-gradient(ellipse at center, #120800 0%, #030108 75%);
 }
 
-/* ── PAGE BASE - real parchment texture ── */
 .page {
   background:
     linear-gradient(rgba(200,160,80,0.06), rgba(200,160,80,0.06)),
@@ -757,12 +746,8 @@ body {
   background-color: #c8a860;
 }
 
-/* Ruled lines removed - parchment aging section */
-.page::before {
-  background: transparent;
-}
+.page::before { background: transparent; }
 
-/* Gutter shadows only - real texture handles aging */
 .page-left::after {
   content: '';
   position: absolute;
@@ -781,27 +766,8 @@ body {
   background: linear-gradient(90deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.04) 12%, transparent 30%);
 }
 
-/* Imperial border on aged background */
-.page-border {
-  border-color: rgba(100,65,10,0.30);
-}
+.page-border { border-color: rgba(100,65,10,0.30); }
 
-/* Slightly darker ink on aged parchment for readability */
-:root {
-  --ink:  #0a0500;
-  --ink2: #150a00;
-  --ink3: #2e1800;
-}
-
-/* Portrait ring picks up the warmer paper behind it */
-.portrait-ring {
-  box-shadow:
-    0 0 0 5px transparent,
-    0 0 0 7px var(--brass),
-    0 6px 20px rgba(0,0,0,0.55);
-}
-
-/* Tabs - parchment section overrides */
 .ctab {
   background: linear-gradient(180deg, #b89848, #c4a860);
   color: #1a0800;
@@ -815,122 +781,12 @@ body {
   color: #0e0500;
 }
 
-/* Data slate on aged paper */
-.data-slate {
-  background: rgba(30,10,0,0.07);
-  border-color: rgba(100,65,10,0.22);
-}
-
-/* GH chart wrap */
-.gh-chart-wrap {
-  background: rgba(30,10,0,0.07);
-  border-color: rgba(100,65,10,0.22);
-}
-
-/* Repo entries separator */
-.repo-entry {
-  border-bottom-color: rgba(100,65,10,0.15);
-}
-
 /* ══════════════════════════════════════════════════════
-   INK RENDERING - makes text feel hand-written on parchment
-   ══════════════════════════════════════════════════════ */
-
-/* Base ink rendering for all page text */
-.page-content {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* Body text - IM Fell DW Pica has natural stroke variation.
-   A hair of text-shadow simulates ink bleeding into parchment fibre. */
-.body-text {
-  text-shadow: 0.4px 0.4px 0 rgba(10,5,0,0.25);
-  letter-spacing: 0.01em;
-  font-size: 16px;
-}
-
-.body-text.small {
-  font-size: 14px;
-  text-shadow: 0.3px 0.3px 0 rgba(10,5,0,0.2);
-}
-
-/* Headings - heavier ink deposit, like a broad quill stroke */
-.page-title {
-  text-shadow:
-    0.5px 0.5px 0   rgba(10,5,0,0.3),
-    1px   1px   1px rgba(10,5,0,0.08);
-  letter-spacing: 0.04em;
-}
-
-.sec-head {
-  text-shadow:
-    0.5px 0.5px 0   rgba(90,0,0,0.3),
-    1px   1px   1px rgba(90,0,0,0.08);
-}
-
-/* Ingredient names - confident quill strokes */
-.ds-name {
-  text-shadow: 0.4px 0.4px 0 rgba(10,5,0,0.25);
-  letter-spacing: 0.02em;
-}
-
-/* Notes and italics - lighter, finer quill */
-.ds-note,
-.body-text.italic,
-.entry-place,
-.repo-desc,
-.portrait-caption {
-  text-shadow: 0.3px 0.3px 0 rgba(10,5,0,0.18);
-}
-
-/* Entry roles - medium quill pressure */
-.entry-role {
-  text-shadow:
-    0.4px 0.4px 0   rgba(80,0,0,0.28),
-    0.8px 0.8px 1px rgba(80,0,0,0.08);
-}
-
-/* Repo names */
-.repo-name {
-  text-shadow:
-    0.4px 0.4px 0   rgba(80,0,0,0.28),
-    0.8px 0.8px 1px rgba(80,0,0,0.08);
-}
-
-/* Chapter labels and dates - fine pen, small text */
-.chap-label,
-.entry-date,
-.repo-lang,
-.page-num,
-.portrait-caption {
-  text-shadow: 0.3px 0.3px 0 rgba(100,65,0,0.3);
-  letter-spacing: 0.22em;
-}
-
-/* Drop cap - thick ink, like a decorated initial */
-.dropcap::first-letter {
-  text-shadow:
-    1px 1px 0   rgba(80,0,0,0.35),
-    2px 2px 2px rgba(80,0,0,0.1);
-}
-
-/* Stamp - smeared red ink */
-.stamp {
-  text-shadow:
-    0.5px 0.5px 0   rgba(100,0,0,0.4),
-    1px   1px   2px rgba(100,0,0,0.15);
-  letter-spacing: 0.18em;
-}
-
-/* ══════════════════════════════════════════════════════
-   MUSIC TOGGLE BUTTON - top-right of header
-   Styled as a brass wax seal, fixed in the corner
+   MUSIC TOGGLE BUTTON
    ══════════════════════════════════════════════════════ */
 
 .imperial-header {
-  position: relative; /* anchor for absolute music btn */
+  position: relative;
 }
 
 .music-btn {
@@ -941,6 +797,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   background: radial-gradient(circle at 38% 35%, #d4a010, #8b6400);
   border: 2px solid #5a3a00;
@@ -955,7 +812,6 @@ body {
     inset 0 -1px 0 rgba(0,0,0,0.2);
   padding: 0;
   overflow: hidden;
-  justify-content: center;
 }
 
 .music-btn:hover {
@@ -967,9 +823,7 @@ body {
   background: radial-gradient(circle at 38% 35%, #e8b820, #a07800);
 }
 
-.music-btn:active {
-  transform: translateY(-50%) scale(0.96);
-}
+.music-btn:active { transform: translateY(-50%) scale(0.96); }
 
 .music-icon {
   display: flex;
@@ -977,17 +831,8 @@ body {
   justify-content: center;
   color: #1a0800;
 }
-
-.music-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: #1a0800;
-}
-
-.music-icon-stop svg {
-  fill: #1a0800;
-  stroke: none;
-}
+.music-icon svg { width: 20px; height: 20px; stroke: #1a0800; }
+.music-icon-stop svg { fill: #1a0800; stroke: none; }
 
 .music-label {
   font-family: var(--fc);
@@ -998,7 +843,6 @@ body {
   margin-top: -2px;
 }
 
-/* Playing state - glows like a lit candle */
 .music-btn.playing {
   background: radial-gradient(circle at 38% 35%, #ff9900, #7a3000);
   border-color: #c05000;
@@ -1007,21 +851,10 @@ body {
     0 0 24px rgba(255,120,0,0.35),
     inset 0 1px 0 rgba(255,200,0,0.3);
 }
+.music-btn.playing .music-label        { color: #fff0d0; }
+.music-btn.playing .music-icon svg     { stroke: #fff0d0; }
+.music-btn.playing .music-icon-stop svg { fill: #fff0d0; stroke: none; }
 
-.music-btn.playing .music-label {
-  color: #fff0d0;
-}
-
-.music-btn.playing .music-icon svg {
-  stroke: #fff0d0;
-}
-
-.music-btn.playing .music-icon-stop svg {
-  fill: #fff0d0;
-  stroke: none;
-}
-
-/* Responsive - slightly smaller on mobile */
 @media (max-width: 700px) {
   .music-btn {
     width: 42px;
@@ -1029,8 +862,72 @@ body {
     top: 8px;
     transform: none;
   }
-  .music-btn:hover {
-    transform: scale(1.08);
-  }
+  .music-btn:hover { transform: scale(1.08); }
   .music-label { display: none; }
+}
+
+/* ── BIGGER TEXT — all pages except the first (About) page ── */
+.page-bigger .body-text          { font-size: 24px; }
+.page-bigger .body-text.small    { font-size: 21px; }
+.page-bigger .page-title         { font-size: clamp(28px, 3.6vw, 40px); }
+.page-bigger .sec-head           { font-size: 32px; }
+.page-bigger .entry-role         { font-size: 23px; }
+.page-bigger .entry-place        { font-size: 18px; }
+.page-bigger .entry-date         { font-size: 15px; }
+.page-bigger .ds-name            { font-size: 16px; min-width: 120px; }
+.page-bigger .ds-note            { font-size: 16px; }
+.page-bigger .chap-label         { font-size: 15px; }
+.page-bigger .repo-name          { font-size: 23px; }
+.page-bigger .repo-desc          { font-size: 17px; }
+.page-bigger .dropcap::first-letter { font-size: 72px; }
+.page-bigger .page-subtitle      { font-size: 18px; }
+.page-bigger .stamp              { font-size: 15px; }
+
+/* ── PAGE 0 GRID LAYOUT ── */
+.page0-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.page0-text {
+  min-width: 0; /* prevents overflow */
+}
+
+.page0-portrait {
+  width: 190px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.page0-portrait .portrait-arch-wrap {
+  width: 190px;
+  height: 268px;
+  margin: 0 auto 6px;
+  filter:
+    drop-shadow(0 6px 20px rgba(0,0,0,0.65))
+    drop-shadow(0 0 16px rgba(124,58,237,0.3));
+}
+
+/* Remove old float-based portrait styles on page 0 */
+.page0-portrait .portrait-wrap {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .page0-grid {
+    grid-template-columns: 1fr;
+  }
+  .page0-portrait {
+    width: 140px;
+    margin: 0 auto;
+  }
+  .page0-portrait .portrait-arch-wrap {
+    width: 140px;
+    height: 197px;
+  }
 }
