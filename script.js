@@ -1,5 +1,4 @@
-// CONFIG 
-const GITHUB_USER = 'handechasacademy';
+const GITHUB_USER = 'handecodes';
 
 const PINNED = [
   'UnstuckApp',
@@ -29,7 +28,6 @@ const GRIMOIRE_DESC = {
 
 const CHAPTER_PAGES = [0, 2, 4, 6];
 
-// ── PAGEFLIP ───────────────────────────────────────────────
 let pageFlip = null;
 
 function initBook() {
@@ -43,6 +41,8 @@ function initBook() {
   const isMobile   = window.innerWidth < 700;
   const totalW     = Math.min(container.clientWidth, 1160);
 
+  
+  
   const pageW = isMobile
     ? Math.round(totalW * 0.94)
     : Math.round(totalW / 2);
@@ -64,6 +64,7 @@ function initBook() {
     showCover:           false,
     drawShadow:          true,
     flippingTime:        800,
+    
     usePortrait:         isMobile,
     startPage:           0,
     autoSize:            false,
@@ -74,12 +75,14 @@ function initBook() {
 
   pageFlip.loadFromHTML(document.querySelectorAll('.page'));
 
+  
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
 
   if (prevBtn) prevBtn.addEventListener('click', () => pageFlip.flipPrev('bottom'));
   if (nextBtn) nextBtn.addEventListener('click', () => pageFlip.flipNext('bottom'));
 
+  
   pageFlip.on('flip', (e) => syncTabs(e.data));
   pageFlip.on('changeState', () => {
     const page = pageFlip.getCurrentPageIndex();
@@ -89,7 +92,8 @@ function initBook() {
   syncTabs(0);
   updateButtons(0);
 
-  // MOBILE CONTENT SCALING 
+  
+  
   if (isMobile) {
     setTimeout(scaleMobilePages, 300);
   }
@@ -99,20 +103,23 @@ function scaleMobilePages() {
   const pages = document.querySelectorAll('.page-content');
   if (!pages.length) return;
 
+  
   const stfParent = document.querySelector('.stf__parent');
   const pageH = stfParent ? stfParent.offsetHeight : window.innerHeight * 0.8;
   const pageW = stfParent ? stfParent.offsetWidth  : window.innerWidth  * 0.94;
 
   pages.forEach(pc => {
+    
     pc.style.transform = 'none';
     pc.style.width     = '100%';
 
     const naturalH = pc.scrollHeight;
     const naturalW = pc.scrollWidth;
 
+    
     const scaleH = (pageH - 20) / naturalH;
     const scaleW = (pageW - 20) / naturalW;
-    const scale  = Math.min(scaleH, scaleW, 1);
+    const scale  = Math.min(scaleH, scaleW, 1); 
 
     if (scale < 1) {
       pc.style.transformOrigin = 'top left';
@@ -123,6 +130,7 @@ function scaleMobilePages() {
 }
 
 function syncTabs(pageIndex) {
+  
   let chapterIdx = 0;
   for (let i = CHAPTER_PAGES.length - 1; i >= 0; i--) {
     if (pageIndex >= CHAPTER_PAGES[i]) { chapterIdx = i; break; }
@@ -140,7 +148,6 @@ function updateButtons(pageIndex) {
   if (nextBtn) nextBtn.disabled = pageIndex >= 6;
 }
 
-//CHAPTER TAB CLICKS
 function initTabs() {
   const tabs = document.getElementById('chapterTabs');
   if (!tabs) return;
@@ -153,7 +160,6 @@ function initTabs() {
   });
 }
 
-// GITHUB REPOS
 async function loadRepos() {
   const leftEl  = document.getElementById('repoListLeft');
   const rightEl = document.getElementById('repoListRight');
@@ -202,16 +208,19 @@ function repoCard(repo) {
   `;
 }
 
-//BOOT
 document.addEventListener('DOMContentLoaded', () => {
+  
   loadRepos();
 
+  
   initTabs();
 
+  
   requestAnimationFrame(() => {
     setTimeout(initBook, 120);
   });
 
+  
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -222,8 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-// MUSIC TOGGLE - YouTube IFrame API 
 (function() {
   const btn = document.getElementById('musicBtn');
   if (!btn) return;
@@ -237,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let playing   = false;
   let pendingPlay = false;
 
+  
   window.onYouTubeIframeAPIReady = function() {
     apiReady = true;
     ytPlayer = new YT.Player('ytPlayer', {
@@ -251,10 +259,9 @@ document.addEventListener('DOMContentLoaded', () => {
         rel:         0,
         loop:        1,
         playlist:    'ztzq05IzYds',
-        start:       35,
+        start:       35, 
       },
-      playerVars_startSeconds: 35,
-        events: {
+      events: {
         onReady: function(e) {
           e.target.setVolume(35);
           if (pendingPlay) {
@@ -263,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         },
         onStateChange: function(e) {
+          
           if (e.data === YT.PlayerState.PLAYING) {
             setPlaying(true);
           } else if (e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED) {
@@ -304,6 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  
+  
+  
   pendingPlay = true;
   loadYTApi();
 })();
