@@ -2,28 +2,28 @@ const GITHUB_USER = 'handecodes';
 
 const PINNED = [
   'UnstuckApp',
+  'TaskBreakdownAPI',
   'OrbitalTransferCalculator',
   'PortfolioPage',
   'Calculator',
   'TaskManager',
   'LibraryDB',
   'BankProjekt',
-  'ChessBoard2_0',
-  'ContactCatalog_2',
+  'ContactCatalog',
   'Photo_Gallery',
 ];
 
 const GRIMOIRE_DESC = {
-  UnstuckApp:                 'Distributed AI Content Assistant - ASP.NET Core microservices with React frontend',
-  OrbitalTransferCalculator:  'Navigation rites of the void - orbital transfer delta-V calculator',
-  PortfolioPage:              'This very grimoire you now read',
-  Calculator:                 'Arithmetic instruments with CI/CD pipeline and Jest tests',
-  TaskManager:                'Keeper of oaths and duties',
-  LibraryDB:                  'The grand archive of knowledge',
-  BankProjekt:                'Treasury of the Administratum',
-  ChessBoard2_0:              'The royal game of kings, reforged',
-  ContactCatalog_2:           'Registry of known souls',
-  Photo_Gallery:              'A gallery of captured moments',
+  UnstuckApp:                'AI-powered task breakdown app for ADHD - React + ASP.NET Core microservices + HuggingFace LLM',
+  TaskBreakdownAPI:          'AI microservices backend breaking goals into ADHD-friendly microsteps - ASP.NET Core + HuggingFace',
+  OrbitalTransferCalculator: 'Navigation rites of the void - calculates delta-V for orbital transfers in C# / .NET 8',
+  PortfolioPage:             'This very grimoire you now read - GitHub API + vanilla JS',
+  Calculator:                'Arithmetic instruments with Jest tests, ESLint, and full CI/CD via GitHub Actions',
+  TaskManager:               'Keeper of oaths and duties',
+  LibraryDB:                 'Grand archive of knowledge - C# / .NET 8, Entity Framework Core, SQL Server',
+  BankProjekt:               'Treasury of the Administratum - team-built banking system in C# / .NET 8',
+  ContactCatalog:            'Registry of known souls - C# with xUnit/Moq tests and layered architecture',
+  Photo_Gallery:             'Responsive image gallery - Animals, Nature, Mushrooms and Space collections',
 };
 
 const CHAPTER_PAGES = [0, 2, 4, 6];
